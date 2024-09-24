@@ -5,7 +5,7 @@ FROM node:14
 WORKDIR /usr/src/app
 
 # Copy the app.js file
-COPY app.js .
+COPY node.js .
 
 # Expose the port that the app listens on
 EXPOSE 3000
