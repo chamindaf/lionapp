@@ -1,11 +1,5 @@
-FROM nginx:alpine
-
-# Copy the config files
-ADD app.conf /etc/nginx/
-# Clears the static files
-RUN rm -rf /usr/share/nginx/html
-# Copy the static web content
-ADD . /usr/share/nginx/html
-
-# Suggests to bind port 80 to any port of the host system
-EXPOSE 80
+FROM python:3
+ADD index.html index.html
+ADD server.py server.py
+EXPOSE 8888
+ENTRYPOINT ["python3", "server.py"]
